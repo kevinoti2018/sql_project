@@ -1,0 +1,8 @@
+
+CREATE OR ALTER PROCEDURE deleteUser(
+  @id VARCHAR (100)
+  )
+AS 
+BEGIN
+   DELETE FROM USERDB WHERE id=@id
+END
