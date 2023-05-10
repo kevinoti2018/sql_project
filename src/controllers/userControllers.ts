@@ -3,7 +3,6 @@ import { Request, Response,RequestHandler, json } from 'express';
 import {v4 as uid} from 'uuid';
 import { sqlConfig } from '../config';
 import bcrypt from 'bcrypt';
-import {log} from 'console';
 
 interface ExtendRequest extends Request{
     body:{
@@ -16,6 +15,7 @@ interface ExtendRequest extends Request{
 export const registerUser =  async (req:ExtendRequest,res:Response)=>{
     try{
         let id =uid()
+        console.log(id)
         const {username,email,password} =  req.body
         let hashedpassword =  await bcrypt.hash(password, 10)
         // connnect to a db
