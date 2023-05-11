@@ -7,3 +7,4 @@ CREATE TABLE PRODUCTS (
      user_id VARCHAR(100) NOT NULL,
      FOREIGN KEY (user_id) REFERENCES USERDB(id)
 );
+   
