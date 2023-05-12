@@ -1,5 +1,8 @@
 import jwt from 'jsonwebtoken'
 import {Request, Response,NextFunction} from 'express'
+import dotenv from 'dotenv'
+import path from 'path'
+dotenv.config({path:path.resolve(__dirname, '../../.env')})
 interface Decoded {
     email:string
 }
@@ -15,7 +18,7 @@ export const verifyLogin =  async (req:ExtendedRequest, res:Response,next:NextFu
         } 
  
         //token  i need to check two things: is it expired, is it valid token
-        const dedodedData = jwt.verify(token, 'ttttweywastring' as string) as Decoded
+        const dedodedData = jwt.verify(token, process.env.Secret as string) as Decoded
         req.info=dedodedData
  
      } catch (error:any) {

@@ -7,6 +7,6 @@ const userRoutes = Router()
 userRoutes.post('',registerUser)
 userRoutes.post('/login',loginUser)
 userRoutes.post('/reset',resetPassword)
-userRoutes.post('/getuser', getUser,verifyLogin)
+userRoutes.post('/getuser',verifyLogin, getUser)
 
 export default userRoutes
