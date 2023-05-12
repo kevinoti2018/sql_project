@@ -20,7 +20,6 @@ export const sqlConfig = {
   
 }
 
-
 // sql.connect(sqlConfig).then(pool=>{  
 //       if(pool.connected){
 //           console.log("I'm Connected  the database");
